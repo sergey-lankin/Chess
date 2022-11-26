@@ -12,8 +12,8 @@ public class Bishop extends ChessPiece {
         int deltaColumn = Math.abs(toColumn - column);
         if (deltaLine == 0 && deltaColumn == 0) return false;
         else if (toLine > 7 || toLine < 0 || toColumn < 0 || toColumn > 7) return false;
-        else if (deltaLine == deltaColumn && (board.board[toLine][toColumn] == null ||
-                !board.board[toLine][toColumn].getColor().equals(color))) {
+        else if (deltaLine == deltaColumn && ((board.board[toLine][toColumn] == null ||
+                !board.board[toLine][toColumn].getColor().equals(color)))) {
             if (deltaColumn > 1 && (line < toLine && column < toColumn)) {
                 for (int i = 1; i < deltaColumn; i++) {
                     if (board.board[line + i][column + i] != null) return false;

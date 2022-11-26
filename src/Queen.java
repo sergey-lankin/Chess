@@ -15,8 +15,8 @@ public class Queen extends ChessPiece {
         if (deltaLine == 0 && deltaColumn == 0) return false;
         else if (toLine > 7 || toLine < 0 || toColumn < 0 || toColumn > 7) return false;
         else if (((deltaLine > 0 && deltaColumn == 0) || (deltaLine == 0 && deltaColumn > 0))
-                && (board.board[toLine][toColumn] == null ||
-                !board.board[toLine][toColumn].getColor().equals(color))) {
+                && ((board.board[toLine][toColumn] == null ||
+                !board.board[toLine][toColumn].getColor().equals(color)))) {
             if (line < toLine && deltaLine > 1) {
                 for (int i = 1; i < deltaLine; i++) {
                     if (board.board[line + i][column] != null) return false;
@@ -40,7 +40,7 @@ public class Queen extends ChessPiece {
             }
             return true;
         }
-        else if (deltaLine == deltaColumn && (board.board[toLine][toColumn] == null ||
+        else if (deltaLine == deltaColumn && ((board.board[toLine][toColumn] == null) ||
                 !board.board[toLine][toColumn].getColor().equals(color))) {
             if (deltaColumn > 1 && (line < toLine && column < toColumn)) {
                 for (int i = 1; i < deltaColumn; i++) {

@@ -16,7 +16,8 @@ public class King extends ChessPiece {
         int deltaColumn = Math.abs(toColumn - column);
         if (deltaLine == 0 && deltaColumn == 0) return false;
         else if (toLine > 7 || toLine < 0 || toColumn < 0 || toColumn > 7) return false;
-        else if ((deltaLine == 1 && deltaColumn == 1) || (deltaLine == 0 && deltaColumn == 1) || (deltaLine == 1 && deltaColumn == 0)) {
+        else if ((deltaLine == 1 && deltaColumn == 1) || (deltaLine == 0 && deltaColumn == 1) ||
+                (deltaLine == 1 && deltaColumn == 0)) {
             if (board.board[toLine][toColumn].color.equals(color)) return false;
             else return true;
         } else return false;
